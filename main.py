@@ -5,12 +5,22 @@ See assignment-01.pdf for details.
 # no imports needed.
 
 def foo(x):
-    ### TODO
-    pass
+    if x <= 1:
+        return x
+    else:
+        return foo(x-1) + foo(x-2)
 
 def longest_run(mylist, key):
-    ### TODO
-    pass
+    seq_len = 0
+    longest = 0
+    for v in mylist:
+        if v == key:
+            seq_len += 1
+        else:
+            if seq_len > longest:
+                longest = seq_len
+            seq_len = 0
+    return max(longest, seq_len)
 
 
 class Result:
@@ -37,8 +47,16 @@ def to_value(v):
         return int(v)
         
 def longest_run_recursive(mylist, key):
-    ### TODO
-    pass
+    if len(mylist) == 1:
+        if mylist[0] == key:            
+            return Result(1, 1, 1, True)
+        else:
+            return Result(0, 0, 0, False)
+
+    # each thread spawns more threads
+    result1 = _longest_run_recursive(mylist[:len(mylist)//2], key)
+    result2 = _longest_run_recursive(mylist[len(mylist)//2:], key)
+    return combine_results(result1, result2)
 
 
 

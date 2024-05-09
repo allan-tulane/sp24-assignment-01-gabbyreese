@@ -2,7 +2,7 @@
 
 # CMPS 2200 Assignment 1
 
-**Name:**_________________________
+**Name:** Gabby Reese
 
 
 In this assignment, you will learn more about asymptotic notation, parallelism, functional languages, and algorithmic cost models. As in the recitation, some of your answer will go here and some will go in `main.py`. You are welcome to edit this `assignment-01.md` file directly, or print and fill in by hand. If you do the latter, please scan to a file `assignment-01.pdf` and push to your github repository. 
@@ -12,36 +12,36 @@ In this assignment, you will learn more about asymptotic notation, parallelism, 
 1. (2 pts ea) **Asymptotic notation** (12 pts)
 
   - 1a. Is $2^{n+1} \in O(2^n)$? Why or why not? 
-.  
+.  True, since 2^(n+1) = 2 * 2^n.
 .  
 .  
 .  
 . 
   - 1b. Is $2^{2^n} \in O(2^n)$? Why or why not?     
-.  
+.  False, since 2^(2^n) = 2^n * 2^n = 4n.
 .  
 .  
 .  
 .  
   - 1c. Is $n^{1.01} \in O(\mathrm{log}^2 n)$?    
-.  
-.  
+
+.  No.
 .  
 .  
 
   - 1d. Is $n^{1.01} \in \Omega(\mathrm{log}^2 n)$?  
-.  
+.  Yes.
 .  
 .  
 .  
   - 1e. Is $\sqrt{n} \in O((\mathrm{log} n)^3)$?  
-.  
+.  No.
 .  
 .  
 .  
   - 1f. Is $\sqrt{n} \in \Omega((\mathrm{log} n)^3)$?  
 .  
-
+Yes.
 
 2. **SPARC to Python** (12 pts)
 
@@ -62,7 +62,7 @@ $$
 
   - 2b. (6 pts) What does this function do, in your own words?  
 
-.  
+.  This is the Fibonacci sequence.
 .  
 .  
 .  
@@ -92,6 +92,7 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3b. (4 pts) What is the Work and Span of this implementation?  
 
+The work and span is O(n).
 .  
 .  
 .  
@@ -107,7 +108,7 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3d. (4 pts) What is the Work and Span of this sequential algorithm?  
 .  
-.  
+.  Work and span is O(n).
 .  
 .  
 .  
@@ -121,7 +122,7 @@ E.g., `longest_run([2,12,12,8,12,12,12,0,12,1], 12) == 3`
 
   - 3e. (4 pts) Assume that we parallelize in a similar way we did with `sum_list_recursive`. That is, each recursive call spawns a new thread. What is the Work and Span of this algorithm?  
 
-.  
+.  Work is O(n) and span is O(logn).
 .  
 .  
 .  
